@@ -1,0 +1,36 @@
+body {
+    background-color: #2b2d2b;
+    color: white;
+    font-size: 16pt;
+    font-family: "Courier New", sans-serif;
+}
+h1 {
+    font-size: 30pt;
+    text-align: center;
+    font-family: "Courier New", sans-serif;
+    margin: 0;
+}
+.contentBox {
+    max-width: 1080px;
+    padding: 20px;
+    background-color: #224b34;
+    margin: auto;
+    border-radius: 6pt;
+}
+.navigation {
+    text-align: center;
+    font-size: 14pt;
+    margin: 0;
+}
+a.textLink:link {
+    color: #00e1ff;
+}
+
+a.textLink:visited {
+    color: #d88eff;
+}
+a.textLink:hover {
+    color: #FFF;
+    background-color: #000;
+}
+
