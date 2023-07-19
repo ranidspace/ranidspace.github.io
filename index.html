@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Ranid website</title>
+    <meta content="Ranid's Space" property="og:title" />
+    <meta content="A site for a handful of my things" property="og:description" />
+    <meta content="https://ranid.gay" property="og:url" />
+    <meta content="https://64.media.tumblr.com/894146283463cde76941188889352495/8b62d4ef57e219e4-02/s128x128u_c1/fed70b1e533d23ca611eb248726d5e95eef73542.jpg" property="og:image" />
+
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
     <style>
-        .mainFlex {
+        .topFlex {
             display: flex;
             flex-direction: row;
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
+            margin: 100px 0;
         }
-        .mainText {
+        .topText {
             display: block;
             padding-right: 50px;
             width: 600px;
@@ -33,26 +41,59 @@
             Ranid's Space
         </h1>
         <div class="navigation">
-            <a href="index.html" class="textLink">Main</a> |
-            <a href="projects.html" class="textLink">Projects</a> |
-            <a href="art.html" class="textLink">Art</a>
-
+            <a href="index.html">Main</a> |
+            <a href="projects.html">Projects</a> |
+            <a href="art.html">Art</a> |
+            <a href="friends.html">Friends</a>
         </div>
         <hr>
 
-        <div class="mainFlex">
-            <div class="mainText">
-                Hi, this is Audrey but you may know me as Ranid or Ranidspace. I go by They/It/Xe pronouns. I am not a web designer (which may be apparent). Feel free to look around
+        <div class="topFlex">
+            <div class="topText">
+                Hi, this is Audrey, but you may know me as Ranid or Ranidspace. I go by They/It/Xe pronouns.
+                I am not a web designer (which may be apparent). Feel free to look around <br style="margin-bottom: 0.5em" />
+                This website is severely unfinished!
             </div>
             <div class="socialLinks">
-                Find me here: <br>
-                Tumblr: <a href="https://blog.ranid.gay" class="textLink">ranidspace</a> <br>
-                Discord: (ask me)<br><br>
-                I'm also here:<br>
-                Twitter: <a href="https://twitter.com/lazygott" class="textLink">lazygott</a><br>
-                Bluesky: <a href="https://bsky.app/profile/ranid.gay" class="textLink">ranid.gay</a>
+                Find me here: <br style="margin-bottom: 0.5em" />
+                Tumblr: <a href="https://ranidspace.tumblr.com/">ranidspace</a><br />
+                Discord: (ask me) <br style="margin-bottom: 0.8em" />
+                I'm also here: <br style="margin-bottom: 0.5em" />
+                Twitter: <a href="https://twitter.com/lazygott">lazygott</a><br />
+                Bluesky: <a href="https://bsky.app/profile/ranid.gay">ranid.gay</a>
             </div>
         </div>
+        <h3> Blog </h3>
+        <hr>
+        <h4>Programs and Services I Use</h4>
+        <h5>2023-07-15 5:03</h5>
+        <p>I've decided to make a bit of a blog here in order to fill up this first page. So here's what I use when im on my computer.</p>
+
+        <p>I use <a href="https://www.mozilla.org/en-CA/firefox/new/">Firefox</a>. It is one of the only browsers that is not based on chromium.
+            Google owns chromium and is cracking down on ad blockers and such, and firefox is much more customizable in my experience.
+            Moving from chrome to Firefox was pretty easy and there's not much that I miss.</p>
+
+        <p>If you care about privacy (which you should), I suggest use these two extensions:
+            <a href="https://addons.mozilla.org/en-CA/firefox/addon/ublock-origin/">Ublock Origin</a>,
+            <a href="https://addons.mozilla.org/en-CA/firefox/addon/localcdn-fork-of-decentraleyes/">LocalCDN</a>.</p>
+
+        <p>This list was actually a lot longer. I then later found out that a bunch of extensions I used were reduntant or very old.
+            LocalCDN is just a fork of Decentraleyes, which is a lot more updated, Privacy badger and DuckDuckGo Privacy essentials
+            is redundant with blocking trackers with Ublock origin. HTTPS everywhere is just built into Firefox these days, it's this thing:</p>
+        <img src="images/HTTPSonlymode.png" alt="A screenshot with text, a title saying 'HTTPS-Only Mode' and a paragraph of text which reads'HTTPS provides a secure, encrypted connection between Firefox and the websites you visit. Most websites support HTTPS, and if HTTPS-Only Mode is enabled, then Firefox will upgrade all connections to HTTPS.'" height="239" width="686" />
+        <p>Firefox in general can be <a href="https://brainfucksec.github.io/firefox-hardening-guide">hardened for privacy</a>
+            but there's a lot of stuff that can break functionality and slow things down. Don't do everything on that page blindly, learn what they do first.</p>
+        <p>Moving on from Firefox, rapid firing some open source programs I use which was originally the fucking point of this blog post:
+            <a href="https://www.7-zip.org/">7Zip</a> (please stop using winrar),
+            <a href="https://www.audacityteam.org/download/">Audacity</a>
+            (Use version 3.0.2! It's the latest version without telemetry),
+            <a href="https://f-droid.org/en/packages/com.looker.droidify/">Droid-ify</a>,
+            <a href="https://apt.izzysoft.de/fdroid/index/apk/me.jmh.authenticatorpro">Authenticator Pro</a> (the repository should be included in Droid-ify),
+            <a href="https://syncthing.net/">Syncthing</a>, and a lot more stuff but thats the stuff i use daily</p>
+
+        <p>I would also like to take a moment to recommend <a href="https://bitwarden.com/">Bitwarden</a>. Stop using the same password on every site. This is basic security</p>
+        <p>Anyway, most people I know already know this stuff, I really just made this in order to get something interesting on this page. Happy surfing.</p>
+        <hr>
     </div>
 </body>
 </html>

@@ -1,8 +1,8 @@
 body {
-    background-color: #2b2d2b;
-    color: white;
+    background-color: #224b34;
+    color: black;
     font-size: 16pt;
-    font-family: "Courier New", sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
 }
 h1 {
     font-size: 30pt;
@@ -10,11 +10,19 @@ h1 {
     font-family: "Courier New", sans-serif;
     margin: 0;
 }
+h3 {
+    text-align: center;
+    margin: 0;
+}
+h2, h4, h5 {
+    text-decoration: none;
+    margin: 0;
+}
 .contentBox {
     max-width: 1080px;
     padding: 20px;
-    background-color: #224b34;
-    margin: auto;
+    margin: 30px auto 10px;
+    background-color: #fff8e7;
     border-radius: 6pt;
 }
 .navigation {
@@ -22,15 +30,15 @@ h1 {
     font-size: 14pt;
     margin: 0;
 }
-a.textLink:link {
-    color: #00e1ff;
+a:link {
+    color: #0d2fff;
+    font-family: "Courier New", serif;
 }
 
-a.textLink:visited {
-    color: #d88eff;
+a:visited {
+    color: #5f00bd;
 }
-a.textLink:hover {
+a:active, h2:active {
     color: #FFF;
     background-color: #000;
 }
-
