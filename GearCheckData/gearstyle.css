@@ -73,13 +73,14 @@ button {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	height: 40pt;
+	height: 50pt;
 	width: 120px;
 	padding: 0 4px;
 	margin: 0;
 	background-color: var(--color-box);
 	border-radius: 0 0 5pt 5pt;
 
+	font-size: 14pt;
 	line-height: 16pt;
 	font-family: BlitzMain;
 	letter-spacing: 0.1px;
@@ -106,7 +107,7 @@ button {
 	.gearname {
 		font-size: 10pt;
 		line-height: 12pt;
-		height: 30pt;
+		height: 40pt;
 		width: 90px;
 		padding: 0 3px;
 	}
@@ -130,4 +131,8 @@ a:focus {
 
 a:hover {
 	background-color: white;
+}
+
+label {
+	line-height: 40pt;
 }
