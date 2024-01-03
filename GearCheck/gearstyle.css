@@ -1,0 +1,133 @@
+[data-theme="light"] {
+	--color-bg: white;
+	--color-fg: black;
+	--color-box: rgb(207, 207, 207);
+	--shadow: inset 0 0 3px 3px var(--color-box);
+  }
+  
+  [data-theme="dark"] {
+	--color-bg: rgb(42, 42, 42);
+	--color-fg: white;
+	--color-box: rgb(88, 88, 88);
+	--shadow: none;
+  }
+body {
+	background-color: var(--color-bg);
+	color: var(--color-fg);
+	font-family: Arial, sans-serif;
+}
+p {
+	font-size: 14pt;
+}
+img {
+	
+	width: 128px;
+	height: 128px;
+	background-color: white;
+	border-radius: 5pt 5pt 0 0;
+	box-shadow: var(--shadow);
+  }
+
+h1 {
+	font-weight: bold;
+	font-family: BlitzMain;
+	margin: 0;
+}
+h1.title {
+	line-height: 35pt;
+	font-size: 30pt;
+	margin: 10pt 0;
+}
+small {
+	font-weight: initial;
+	font-family: BlitzMain;
+	font-size: 10pt;
+}
+input{
+	font-size: 12pt;
+}
+button {
+	font-size: 12pt;
+}
+
+.gear-container {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fill, 128px);
+	gap: 5px;
+	width: 90%;
+	margin: auto;
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 128px;
+}
+
+.gearname {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 40pt;
+	width: 120px;
+	padding: 0 4px;
+	margin: 0;
+	background-color: var(--color-box);
+	border-radius: 0 0 5pt 5pt;
+
+	line-height: 16pt;
+	font-family: BlitzMain;
+	letter-spacing: 0.1px;
+}
+
+/* https://github.com/North-West-Wind/splatoon3-fonts/tree/main/Decrypted */
+@font-face {
+    font-family: BlitzMain;
+    src: url("fonts/BlitzMain.otf") format("opentype");
+}
+
+@media screen and (max-width: 600px) {
+	.gear-container {
+		grid-template-columns: repeat(auto-fill, 96px);	
+		width: 100%;
+	}
+	.item {
+		width: 96px;
+	}
+	img {
+		width: 96px;
+		height: 96px;
+	}
+	.gearname {
+		font-size: 10pt;
+		line-height: 12pt;
+		height: 30pt;
+		width: 90px;
+		padding: 0 3px;
+	}
+	h1 {
+		font-size: 20pt;
+	}
+}
+
+a:link {
+	color: rgb(100, 154, 255);
+}
+
+a:visited {
+	color: rgb(211, 100, 255);
+}
+
+a:focus {
+	background-color: var(--color-fg);
+	color: var(--color-bg);
+}
+
+a:hover {
+	background-color: white;
+}
