@@ -1,7 +1,7 @@
 function submit(){
   //clear all data on the page
   document.getElementById("output").innerHTML = "";
-  const noamiibo = document.getElementById("amiibo").checked;
+
 
   //grab data
   const gearfile = document.getElementById('geardata').files[0];
@@ -32,11 +32,12 @@ function submit(){
       div.className = "gear-container";
       div.id = "Missing";
       document.getElementById("output").appendChild(div);
+
     
     //run the missing gear function
-    await missinggear(result, 'head', "Head", noamiibo)
-    await missinggear(result, 'clothing', "Clothes", noamiibo)
-    await missinggear(result, 'shoes', "Shoes", noamiibo)
+    await missinggear(result, 'head', "Head")
+    await missinggear(result, 'clothing', "Clothes")
+    await missinggear(result, 'shoes', "Shoes")
 
     document.getElementById(`output`).appendChild(document.createElement("hr"));
 
@@ -72,39 +73,31 @@ function submit(){
 }
 
 //this function shows the missing gear for 
-async function missinggear(gearlist, Gear, GearInfo, noamiibo) {
+async function missinggear(gearlist, Gear, GearInfo) {
   const path = gearlist['gear']['data'][Gear+"Gears"]['nodes'];
   const jsonlistunfiltered = await jfetch(`https://raw.githubusercontent.com/Leanny/splat3/main/data/mush/600/GearInfo${GearInfo}.json`);
   const translate = await jfetch(`https://raw.githubusercontent.com/Leanny/splat3/main/data/language/USen.json`);
 
   let jsonlist = [];
   //TODO: improve performace. apparently for loops are faster than filtering. idk, nothing seems to work
-  if (noamiibo === true) {
-    jsonlist = jsonlistunfiltered.filter(x => 
-      !(x.HowToGet === "Impossible"||
-      x.__RowId.substr(4,3) === "AMB" ||
-      x.__RowId === "Shs_SHT012" ||
-      x.__RowId === "Shs_SHI011"||
-      x.__RowId === "Clt_HAP001"||
-      x.__RowId === "Clt_TES030" ||
-      x.__RowId === "Clt_TNK003"));
-    }
-  else {
-    jsonlist = jsonlistunfiltered.filter(x => 
-      !((x.HowToGet === "Impossible" ||
-      x.__RowId === "Shs_SHT012" || 
-      x.__RowId === "Shs_SHI011"|| 
-      x.__RowId === "Clt_HAP001"|| 
-      x.__RowId === "Clt_TES030" || 
-      x.__RowId === "Clt_TNK003"
-      )));
-  };
+  jsonlist = jsonlistunfiltered.filter(x => 
+    !((x.HowToGet === "Impossible" ||
+    x.__RowId === "Shs_SHT012" || 
+    x.__RowId === "Shs_SHI011"|| 
+    x.__RowId === "Clt_HAP001"|| 
+    x.__RowId === "Clt_TES030" || 
+    x.__RowId === "Clt_TNK003"
+    )));
 
   const difference = jsonlist.filter(entry1 => !path.some(entry2 => entry1.Id === entry2[Gear+"GearId"]));
 
   for (i=0; i < difference.length; i++) {
     let div = document.createElement("div");
     div.className = "item";
+    if (difference[i].__RowId.substr(4,3) === "AMB") {
+      div.classList.add("amiiboitem")
+      console.log("added")
+    }
     div.id = String(Gear+String(i))
     document.getElementById("Missing").appendChild(div);
     
@@ -127,6 +120,7 @@ async function starcount(gearlist, Gear, GearInfo, Stars) {
   for (let i = 0; i < path.length; i++){
     if (path[i].rarity === Stars) {
       let div = document.createElement("div");
+
       div.className = "item";
       div.id = path[i].name;
       document.getElementById(Stars).appendChild(div);

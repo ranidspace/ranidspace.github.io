@@ -21,7 +21,7 @@ p {
 }
 hr {
 	color: var(--color-fg);
-	
+
 }
 img {
 	
@@ -143,9 +143,14 @@ a:hover {
 	background-color: white;
 }
 
-input#amiibo {
+.amiibocheck {
 	margin: 20px 0;
 }
+
+.amiibocheck:checked ~ div > div > div.amiiboitem {
+	display: none;
+}
+
 /* This has all of the stuff for the little collapsable menus */
 input.toggle {
 	display: none;
