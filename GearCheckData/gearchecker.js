@@ -14,7 +14,17 @@ function submit(){
     const result = JSON.parse(reader.result);
 
     //prepping html stuff
-    div = document.createElement("h1");
+    let div = document.createElement("input");
+    div.className = "toggle";
+    div.id = "collapsible";
+    div.type= "checkbox"
+    div.checked = true;
+    document.getElementById("output").appendChild(div);
+
+    div = document.createElement("label");
+      div.setAttribute("for", "collapsible")
+      div.className = "lbl-toggle";
+      div.id = "missingtitle"
       div.textContent = (`Missing Gear`);
       document.getElementById("output").appendChild(div);
 
@@ -28,20 +38,34 @@ function submit(){
     await missinggear(result, 'clothing', "Clothes", noamiibo)
     await missinggear(result, 'shoes', "Shoes", noamiibo)
 
+    document.getElementById(`output`).appendChild(document.createElement("hr"));
+
     //Loop through 0-5 stars and find the gear for each
     for (let i = 0; i < 6; i++){
-      div = document.createElement("h1");
-      div.textContent = (i+` Star Gear`);
+      let div = document.createElement("input");
+      div.className = "toggle";
+      div.id = `collapsible${i}`;
+      div.type= "checkbox"
+      div.checked = true;
+      document.getElementById(`output`).appendChild(div);
+
+      div = document.createElement("label");
+      div.setAttribute("for", `collapsible${i}`)
+      div.className = "lbl-toggle";
+      div.textContent = i+` Star Gear`;
       document.getElementById("output").appendChild(div);
       
       div = document.createElement("div");
-      div.className = "gear-container";
+      div.className = "gear-container collapsible-content";
       div.id = String(i);
-      document.getElementById("output").appendChild(div);
+      document.getElementById(`output`).appendChild(div);
 
       await starcount(result, "headGear", "GearInfoHead", i);
       await starcount(result, "clothingGear", "GearInfoClothes", i);
       await starcount(result, "shoesGear", "GearInfoShoes", i);
+      if (i != 5){
+        document.getElementById(`output`).appendChild(document.createElement("hr"));
+      }
     }
   }
 
@@ -79,7 +103,7 @@ async function missinggear(gearlist, Gear, GearInfo, noamiibo) {
   const difference = jsonlist.filter(entry1 => !path.some(entry2 => entry1.Id === entry2[Gear+"GearId"]));
 
   for (i=0; i < difference.length; i++) {
-    div = document.createElement("div");
+    let div = document.createElement("div");
     div.className = "item";
     div.id = String(Gear+String(i))
     document.getElementById("Missing").appendChild(div);
@@ -94,7 +118,6 @@ async function missinggear(gearlist, Gear, GearInfo, noamiibo) {
       div.textContent = (translate["CommonMsg/Gear/GearName_"+GearInfo][difference[i]["__RowId"].substr(4,)]);
       document.getElementById(Gear+i).appendChild(div);
   }
-  
 }
 //This function shows gear for a certain star count
 async function starcount(gearlist, Gear, GearInfo, Stars) {
@@ -103,7 +126,7 @@ async function starcount(gearlist, Gear, GearInfo, Stars) {
 
   for (let i = 0; i < path.length; i++){
     if (path[i].rarity === Stars) {
-      div = document.createElement("div");
+      let div = document.createElement("div");
       div.className = "item";
       div.id = path[i].name;
       document.getElementById(Stars).appendChild(div);
@@ -122,6 +145,7 @@ async function starcount(gearlist, Gear, GearInfo, Stars) {
     }
     
   }
+  
 }
 
 async function jfetch(url) {

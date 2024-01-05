@@ -19,6 +19,10 @@ body {
 p {
 	font-size: 14pt;
 }
+hr {
+	color: var(--color-fg);
+	
+}
 img {
 	
 	width: 128px;
@@ -27,16 +31,21 @@ img {
 	border-radius: 5pt 5pt 0 0;
 	box-shadow: var(--shadow);
   }
-
-h1 {
+  .lbl-toggle {
+	font-size: 20pt;
+	line-height: 20pt;
 	font-weight: bold;
 	font-family: BlitzMain;
-	margin: 0;
+	margin: 10pt 0;
+	display: inline-block;
 }
-h1.title {
-	line-height: 35pt;
+h1 {
+	line-height: 30pt;
 	font-size: 30pt;
 	margin: 10pt 0;
+	font-weight: bold;
+	font-family: BlitzMain;
+	margin: 10px 0;
 }
 small {
 	font-weight: initial;
@@ -51,7 +60,7 @@ button {
 }
 
 .gear-container {
-	display: grid;
+	display: none; /* changed to grid later on */
 	justify-content: center;
 	grid-template-columns: repeat(auto-fill, 128px);
 	gap: 5px;
@@ -112,6 +121,7 @@ button {
 		padding: 0 3px;
 	}
 	h1 {
+		line-height: 20pt;
 		font-size: 20pt;
 	}
 }
@@ -133,6 +143,26 @@ a:hover {
 	background-color: white;
 }
 
-label {
-	line-height: 40pt;
+input#amiibo {
+	margin: 20px 0;
+}
+/* This has all of the stuff for the little collapsable menus */
+input.toggle {
+	display: none;
+}
+.gear-container {
+	display: none;
+}
+.toggle:checked + .lbl-toggle + .gear-container {
+	display: grid; 
+}
+
+.lbl-toggle::after {
+	content: '>';
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.toggle:checked + .lbl-toggle::after {
+	transform: rotate(90deg) translate(3px,-5px);
 }
