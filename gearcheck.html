@@ -8,7 +8,7 @@
     <script src="GearCheckData\gearchecker.js"></script>
 </head>
 <body onload=loadpage()>
-    <h1>Splatoon 3 Gear Completion Checker <small>V1.1.3</small></h1> <button
+    <h1>Splatoon 3 Gear Completion Checker <small>V1.2.0</small></h1> <button
     onclick=changetheme()
     type="button"
     data-theme-toggle
@@ -29,11 +29,13 @@
 
     <p>Everything is processed locally on your computer and nothing is uploaded, <a href="https://github.com/ranidspace/ranidspace.github.io">read the source code for this whole website here</a></p>
 
-    <p>Upload the geardata file and press submit:</p><br />
+    <p>Upload the geardata file and press submit:</p>
 
     <input type="file" id="geardata" name="file" accept=".json" class="inputbutton" /><br />
-    <input type="checkbox" class="amiibocheck">
+    <input type="checkbox" class="gearfilter" id="amiibo">
     <label for="amiibo">Exclude Missing Amiibo Gear</label><br />
+    <input type="checkbox" class="gearfilter" id="uroko">
+    <label for="uroko">Exclude Missing Grizzco Shop Gear</label><br />
     <button onclick=submit()>Start</button>
     <div id='output'></div>
 </body>

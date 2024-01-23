@@ -33,11 +33,13 @@ function submit(){
       div.id = "Missing";
       document.getElementById("output").appendChild(div);
 
+    const ver = (await jfetch("https://raw.githubusercontent.com/Leanny/splat3/ee576ce418b55192b011e034ab53d7c2af3a0207/versions.json")).at(-1)
     
+    console.log(`The current splatoon version is `+ ver.substr(0,1)+ '.' +ver.substr(1,1)+ '.' +ver.substr(2,1))
     //run the missing gear function
-    await missinggear(result, 'head', "Head")
-    await missinggear(result, 'clothing', "Clothes")
-    await missinggear(result, 'shoes', "Shoes")
+    await missinggear(result, 'head', "Head", ver)
+    await missinggear(result, 'clothing', "Clothes", ver)
+    await missinggear(result, 'shoes', "Shoes", ver)
 
     document.getElementById(`output`).appendChild(document.createElement("hr"));
 
@@ -61,9 +63,9 @@ function submit(){
       div.id = String(i);
       document.getElementById(`output`).appendChild(div);
 
-      await starcount(result, "headGear", "GearInfoHead", i);
-      await starcount(result, "clothingGear", "GearInfoClothes", i);
-      await starcount(result, "shoesGear", "GearInfoShoes", i);
+      await starcount(result, "headGear", "GearInfoHead", i, ver);
+      await starcount(result, "clothingGear", "GearInfoClothes", i, ver);
+      await starcount(result, "shoesGear", "GearInfoShoes", i, ver);
       if (i != 5){
         document.getElementById(`output`).appendChild(document.createElement("hr"));
       }
@@ -73,22 +75,18 @@ function submit(){
 }
 
 //this function shows the missing gear for 
-async function missinggear(gearlist, Gear, GearInfo) {
+async function missinggear(gearlist, Gear, GearInfo, ver) {
   const path = gearlist['gear']['data'][Gear+"Gears"]['nodes'];
-  const jsonlistunfiltered = await jfetch(`https://raw.githubusercontent.com/Leanny/splat3/main/data/mush/600/GearInfo${GearInfo}.json`);
+  const jsonlistunfiltered = await jfetch(`https://raw.githubusercontent.com/Leanny/splat3/main/data/mush/${ver}/GearInfo${GearInfo}.json`);
   const translate = await jfetch(`https://raw.githubusercontent.com/Leanny/splat3/main/data/language/USen.json`);
 
   let jsonlist = [];
   //TODO: improve performace. apparently for loops are faster than filtering. idk, nothing seems to work
   jsonlist = jsonlistunfiltered.filter(x => 
     !((x.HowToGet === "Impossible" ||
-    x.__RowId === "Shs_SHT012" || 
-    x.__RowId === "Shs_SHI011"|| 
-    x.__RowId === "Clt_HAP001"|| 
-    x.__RowId === "Clt_TES030" || 
-    x.__RowId === "Clt_TNK003"
+    x.Season > ver.substring(0,1)|| 
+    x.__RowId === "Clt_HAP001"
     )));
-
   const difference = jsonlist.filter(entry1 => !path.some(entry2 => entry1.Id === entry2[Gear+"GearId"]));
 
   for (i=0; i < difference.length; i++) {
@@ -96,7 +94,9 @@ async function missinggear(gearlist, Gear, GearInfo) {
     div.className = "item";
     if (difference[i].__RowId.substr(4,3) === "AMB") {
       div.classList.add("amiiboitem")
-      console.log("added")
+    }
+    if (difference[i].HowToGet === "Uroko") {
+      div.classList.add("urokoitem")
     }
     div.id = String(Gear+String(i))
     document.getElementById("Missing").appendChild(div);
@@ -113,9 +113,9 @@ async function missinggear(gearlist, Gear, GearInfo) {
   }
 }
 //This function shows gear for a certain star count
-async function starcount(gearlist, Gear, GearInfo, Stars) {
+async function starcount(gearlist, Gear, GearInfo, Stars, ver) {
   const path = gearlist.gear.data[Gear+"s"].nodes;
-  const jsonlist = await jfetch(`https://raw.githubusercontent.com/Leanny/splat3/main/data/mush/600/${GearInfo}.json`);
+  const jsonlist = await jfetch(`https://raw.githubusercontent.com/Leanny/splat3/main/data/mush/${ver}/${GearInfo}.json`);
 
   for (let i = 0; i < path.length; i++){
     if (path[i].rarity === Stars) {
@@ -150,7 +150,7 @@ async function jfetch(url) {
 
 //all of this is for the darkmode toggle
 function changetheme() {
-  const currentThemeSetting = document.querySelector("html").getAttribute("data-theme");
+  let currentThemeSetting = document.querySelector("html").getAttribute("data-theme");
   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
   
   localStorage.setItem("theme", newTheme);

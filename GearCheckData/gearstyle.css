@@ -45,6 +45,7 @@ small {
 }
 input, button{
 	font-size: 16px;
+	margin: 10px 0;
 }
 hr {
 	color: var(--color-fg);
@@ -131,11 +132,12 @@ a:focus {color: var(--color-bg); background-color: var(--color-fg);}
 }
 
 /* Amiibo checkbox */
-.amiibocheck {
-	margin: 20px 0;
+.gearfilter {
+	margin: 10px 0;
 }
 
-.amiibocheck:checked ~ div > div > div.amiiboitem {
+#amiibo:checked ~ div > div > div.amiiboitem,
+#uroko:checked ~ div > div > div.urokoitem {
 	display: none;
 }
 
