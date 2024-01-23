@@ -3,7 +3,7 @@
 - Added a link to the changelog
 ## 1.2.0
 - New button to filter out grizzco gear obtained with scales
-- The website now auto with as [Lean's Splatoon 3 Database](https://leanny.github.io/splat3/database.html)
+- The website now auto updates with as [Lean's Splatoon 3 Database](https://leanny.github.io/splat3/database.html)
 ## 1.1.3
 - CSS changes and reorganization
 - Changed url
