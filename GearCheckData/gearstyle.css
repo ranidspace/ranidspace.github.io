@@ -64,12 +64,14 @@ a:focus {color: var(--color-bg); background-color: var(--color-fg);}
 
 /* classes for the  */
 .lbl-toggle {
-	display: inline-block;
+	list-style: none;
+	cursor: pointer;
 	font-size: 26px;
 	line-height: 26px;
 	font-weight: bold;
 	font-family: BlitzMain;
 	margin: 14px 0;
+	user-select: none;
 }
 .gear-container {
 	display: grid; 
