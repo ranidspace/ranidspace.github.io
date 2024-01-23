@@ -72,7 +72,7 @@ a:focus {color: var(--color-bg); background-color: var(--color-fg);}
 	margin: 14px 0;
 }
 .gear-container {
-	display: none; /* changed to grid later on */
+	display: grid; 
 	justify-content: center;
 	grid-template-columns: repeat(auto-fill, 128px);
 	gap: 5px;
@@ -136,16 +136,9 @@ a:focus {color: var(--color-bg); background-color: var(--color-fg);}
 	margin: 10px 0;
 }
 
-#amiibo:checked ~ div > div > div.amiiboitem,
-#uroko:checked ~ div > div > div.urokoitem {
+#amiibo:checked ~ div .amiiboitem,
+#uroko:checked ~ div .urokoitem {
 	display: none;
-}
-
-/* collapsible menu */
-input.toggle, .gear-container{ display: none; }
-
-.toggle:checked + .lbl-toggle + .gear-container {
-	display: grid; 
 }
 
 .lbl-toggle::after {
@@ -154,6 +147,6 @@ input.toggle, .gear-container{ display: none; }
 	margin-left: 10px;
 }
 
-.toggle:checked + .lbl-toggle::after {
+.toggle[open] > .lbl-toggle::after {
 	transform: rotate(90deg) translate(3px,-5px);
 }

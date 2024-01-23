@@ -14,24 +14,22 @@ function submit(){
     const result = JSON.parse(reader.result);
 
     //prepping html stuff
-    let div = document.createElement("input");
+    let div = document.createElement("details");
     div.className = "toggle";
-    div.id = "collapsible";
-    div.type= "checkbox"
-    div.checked = true;
+    div.id = "missingear";
+    div.open = true;
     document.getElementById("output").appendChild(div);
 
-    div = document.createElement("label");
-      div.setAttribute("for", "collapsible")
+    div = document.createElement("summary");
       div.className = "lbl-toggle";
       div.id = "missingtitle"
       div.textContent = (`Missing Gear`);
-      document.getElementById("output").appendChild(div);
+      document.getElementById("missingear").appendChild(div);
 
     div = document.createElement("div");
       div.className = "gear-container";
       div.id = "Missing";
-      document.getElementById("output").appendChild(div);
+      document.getElementById("missingear").appendChild(div);
 
     const ver = (await jfetch("https://raw.githubusercontent.com/Leanny/splat3/ee576ce418b55192b011e034ab53d7c2af3a0207/versions.json")).at(-1)
     
@@ -45,23 +43,21 @@ function submit(){
 
     //Loop through 0-5 stars and find the gear for each
     for (let i = 0; i < 6; i++){
-      let div = document.createElement("input");
+      let div = document.createElement("details");
       div.className = "toggle";
       div.id = `collapsible${i}`;
-      div.type= "checkbox"
-      div.checked = true;
+      div.open = true;
       document.getElementById(`output`).appendChild(div);
 
-      div = document.createElement("label");
-      div.setAttribute("for", `collapsible${i}`)
+      div = document.createElement("summary");
       div.className = "lbl-toggle";
       div.textContent = i+` Star Gear`;
-      document.getElementById("output").appendChild(div);
+      document.getElementById(`collapsible${i}`).appendChild(div);
       
       div = document.createElement("div");
       div.className = "gear-container collapsible-content";
       div.id = String(i);
-      document.getElementById(`output`).appendChild(div);
+      document.getElementById(`collapsible${i}`).appendChild(div);
 
       await starcount(result, "headGear", "GearInfoHead", i, ver);
       await starcount(result, "clothingGear", "GearInfoClothes", i, ver);

@@ -1,4 +1,6 @@
 # Changelog
+## 1.2.2
+- Changed the CSS collapsable sections to html "details" elements. The page is once again entirely keyboard navigable.
 ## 1.2.1
 - Added a link to the changelog
 ## 1.2.0
