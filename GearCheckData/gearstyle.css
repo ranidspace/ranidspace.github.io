@@ -38,7 +38,7 @@ h1 {
 	font-weight: bold;
 	line-height: 40px;
 }
-small {
+.version {
 	font-size: 14px;
 	font-family: BlitzMain;
 	font-weight: initial;
