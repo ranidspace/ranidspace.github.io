@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'pixter-granularregular';
+    src: url('/friendassets/pixter_granular-webfont.woff2') format('woff2');
+    src: url('/friendassets/pixter_granular-webfont.woff') format('woff');
+}
+
+.lise {
+    display: block;
+    max-width: 800px;
+    background-color: #B886F5;
+    margin: auto;
+    padding: 20px;
+    font-family: "pixter-granularregular";
+    border-radius: 20px;
+    cursor: url("https://www.wii.gay/cursors/wii-pointer-ccw.cur"), auto;
+    text-align: center;
+}
+.lise h1 {
+    margin-top: 5px;
+	font-family: Comic Sans ms;
+	text-align: center;
+}
+.lise hr {
+    color: rgb(115, 0, 255);
+    width: 90%;
+}
+.lise a:link {
+    color: rgb(91, 206, 250);
+  text-decoration: none;
+    font-family: "pixter-granularregular"
+}
+.lise a:visited {
+    color: rgb(115, 0, 255);
+    text-decoration: none;
+}
+.lise a:hover {
+    color: rgba(0, 0, 0, 0);
+    text-decoration: underline;
+    cursor: url('https://www.wii.gay/cursors/wii-pointer-blue-ccw.cur'), auto;
+}
