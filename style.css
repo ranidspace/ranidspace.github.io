@@ -1,3 +1,7 @@
+
+:root {
+    --color-bg: #fff8e7;
+  }
 body {
     background-color: #224b34;
     color: black;
@@ -22,7 +26,7 @@ h2, h4, h5 {
     max-width: 1080px;
     padding: 20px;
     margin: 30px auto 10px;
-    background-color: #fff8e7;
+    background-color: var(--color-bg);
     border-radius: 6pt;
 }
 .navigation {
@@ -36,9 +40,29 @@ a:link {
 }
 
 a:visited {
-    color: #5f00bd;
+    color: #9d00bd;
 }
 a:active, h2:active {
     color: #FFF;
     background-color: #000;
+}
+ul {
+    margin-top: 0;
+    padding-left: 0.5em;
+    list-style: none outside;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 700px) {
+body {
+    margin: 12px;
+}
+.contentBox {
+    max-width: 1080px;
+    padding: 12px;
+    margin: 0 auto;
+}
 }
