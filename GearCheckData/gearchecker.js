@@ -31,7 +31,7 @@ function submit(){
       div.id = "Missing";
       document.getElementById("missingear").appendChild(div);
 
-    const ver = (await jfetch("https://raw.githubusercontent.com/Leanny/splat3/ee576ce418b55192b011e034ab53d7c2af3a0207/versions.json")).at(-1)
+    const ver = (await jfetch("https://raw.githubusercontent.com/Leanny/splat3/main/versions.json")).at(-1)
     
     console.log(`The current splatoon version is `+ ver.substr(0,1)+ '.' +ver.substr(1,1)+ '.' +ver.substr(2,1))
     //run the missing gear function

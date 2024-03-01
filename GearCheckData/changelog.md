@@ -1,4 +1,6 @@
 # Changelog
+## 1.2.4
+- Quick patch to fix website not auto updating
 ## 1.2.3
 - CSS tweaking of the previous update. I need to learn to think before I push changes
 ## 1.2.2
