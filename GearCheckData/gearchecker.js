@@ -97,10 +97,19 @@ async function missinggear(gearlist, Gear, GearInfo, ver) {
     div.id = String(Gear+String(i))
     document.getElementById("Missing").appendChild(div);
     
+    div = document.createElement("picture");
+    div.id = String(Gear+String(i)+"pic")
+    document.getElementById(Gear+String(i)).appendChild(div);
+
+    div = document.createElement("source");
+    div.srcset = `https://raw.githubusercontent.com/Leanny/splat3/main/images/gear/${difference[i]["__RowId"]}.webp`;
+    div.type = 'image/webp';
+    document.getElementById(Gear+String(i)+"pic").appendChild(div);
+
     div = document.createElement("img");
     div.src = `https://raw.githubusercontent.com/Leanny/splat3/main/images/gear/${difference[i]["__RowId"]}.png`;
     div.alt = translate["CommonMsg/Gear/GearName_"+GearInfo][difference[i]["__RowId"].substr(4,)];
-    document.getElementById(Gear+String(i)).appendChild(div);
+    document.getElementById(Gear+String(i)+"pic").appendChild(div);
 
     div = document.createElement("span");
       div.className = "gearname";
