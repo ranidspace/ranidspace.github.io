@@ -51,7 +51,6 @@ hr {
 	color: var(--color-fg);
 }
 img {
-	vertical-align: bottom;
 	height: 128px;
 	width: 128px;
 	background-color: white;
@@ -152,8 +151,4 @@ a:focus {color: var(--color-bg); background-color: var(--color-fg);}
 
 .toggle[open] > .lbl-toggle::after {
 	transform: rotate(90deg) translate(3px,-5px);
-}
-
-picture{
-	display: block;
 }
