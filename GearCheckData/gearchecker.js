@@ -2,6 +2,13 @@ function submit(){
   //clear all data on the page
   document.getElementById("output").innerHTML = "";
 
+  var req = new XMLHttpRequest();
+  req.open('GET', document.location, true);
+  req.send(null);
+  req.onload = function() {
+    var headers = req.getAllResponseHeaders().toLowerCase();
+    console.log(headers);
+  };
 
   //grab data
   const gearfile = document.getElementById('geardata').files[0];
@@ -88,7 +95,7 @@ async function missinggear(gearlist, Gear, GearInfo, ver) {
   for (i=0; i < difference.length; i++) {
     let div = document.createElement("div");
     div.className = "item";
-    if (difference[i].__RowId.substr(4,3) === "AMB") {
+    if (difference[i].__RowId.substr(4,3) === "AMB" || (difference[i].__RowId.substr(4,3) === "MSN" && difference[i].HowToGet === "Other")) {
       div.classList.add("amiiboitem")
     }
     if (difference[i].HowToGet === "Uroko") {
