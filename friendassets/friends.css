@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'pixter-granularregular';
-    src: url('https://github.com/csd-was-taken/Webbed-Site/raw/refs/heads/main/font/pixter_granular-webfont.woff2') format('woff2');
-    src: url('https://github.com/csd-was-taken/Webbed-Site/raw/refs/heads/main/font/pixter_granular-webfont.woff') format('woff');
+    src: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff') format('woff');
 }
 
 .lise {
@@ -12,7 +12,7 @@
     padding: 20px;
     font-family: "pixter-granularregular";
     border-radius: 20px;
-    cursor: url("https://www.wii.gay/cursors/wii-pointer-ccw.cur"), auto;
+    cursor: url("https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur"), auto;
     text-align: center;
 }
 .lise h1 {
