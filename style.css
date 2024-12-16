@@ -1,26 +1,38 @@
 
+@font-face {
+    font-family: "Martian Mono";
+    src: url("https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Regular.woff2");
+}
+@font-face {
+    font-family: "Martian Mono";
+    src: url("https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Bold.woff2");
+    font-weight: bold;
+}
+
 :root {
     --color-bg: #fff8e7;
   }
 body {
     background-color: #224b34;
     color: black;
-    font-size: 16pt;
+    font-size: 14pt;
     font-family: "Trebuchet MS", sans-serif;
 }
 h1 {
     font-size: 30pt;
     text-align: center;
-    font-family: "Courier New", sans-serif;
+    font-family: "Martian Mono", monospace;
     margin: 0;
 }
 h3 {
     text-align: center;
     margin: 0;
+    font-family: "Martian Mono", monospace;
 }
 h2, h4, h5 {
     text-decoration: none;
     margin: 0;
+    font-family: "Martian Mono", monospace;
 }
 .contentBox {
     max-width: 1080px;
@@ -36,7 +48,7 @@ h2, h4, h5 {
 }
 a:link {
     color: #0d2fff;
-    font-family: "Courier New", serif;
+    font-family: "Marian Mono", monospace;
 }
 
 a:visited {
