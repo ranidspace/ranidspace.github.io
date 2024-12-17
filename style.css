@@ -1,80 +1,108 @@
+@font-face {
+  font-family: 'Martian Mono';
+  src: url('https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Regular.woff2');
+}
 
 @font-face {
-    font-family: "Martian Mono";
-    src: url("https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Regular.woff2");
-}
-@font-face {
-    font-family: "Martian Mono";
-    src: url("https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Bold.woff2");
-    font-weight: bold;
+  font-family: 'Martian Mono';
+  src: url('https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Bold.woff2');
+  font-weight: bold;
 }
 
 :root {
-    --color-bg: #fff8e7;
-  }
+  --color-bg: #fff8e7;
+  --color-hr: #808080;
+  --color-text: black;
+}
+
 body {
-    background-color: #224b34;
-    color: black;
-    font-size: 14pt;
-    font-family: "Trebuchet MS", sans-serif;
+  background-color: #224b34;
+  color: var(--color-text);
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1.2em;
 }
+
 h1 {
-    font-size: 30pt;
-    text-align: center;
-    font-family: "Martian Mono", monospace;
-    margin: 0;
+  font-size: 1.8em;
+  text-align: center;
+  font-family: 'Martian Mono', monospace;
+  margin: 0;
 }
+
 h3 {
-    text-align: center;
-    margin: 0;
-    font-family: "Martian Mono", monospace;
+  text-align: center;
+  margin: 0;
+  font-family: 'Martian Mono', monospace;
 }
-h2, h4, h5 {
-    text-decoration: none;
-    margin: 0;
-    font-family: "Martian Mono", monospace;
+
+h2,
+h4,
+h5 {
+  text-decoration: none;
+  margin: 0;
+  font-family: 'Martian Mono', monospace;
 }
-.contentBox {
-    max-width: 1080px;
-    padding: 20px;
-    margin: 30px auto 10px;
-    background-color: var(--color-bg);
-    border-radius: 6pt;
+
+.content-box {
+  max-width: 68rem;
+  padding: 1em;
+  margin: 1.5em auto 0.8em;
+  background-color: var(--color-bg);
+  border-radius: 1rem;
 }
+
 .navigation {
-    text-align: center;
-    font-size: 14pt;
-    margin: 0;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 0;
 }
+
+.blogpost {
+  margin-top: 1em;
+  border-top: 2px solid var(--color-hr);
+  padding-top: 0.5em;
+}
+
+.blogpost p {
+  text-align: justify;
+}
+
+a {
+  font-family: 'Martian Mono', monospace;
+}
+
 a:link {
-    color: #0d2fff;
-    font-family: "Marian Mono", monospace;
+  color: #0d2fff;
 }
 
 a:visited {
-    color: #9d00bd;
+  color: #9d00bd;
 }
-a:active, h2:active {
-    color: #FFF;
-    background-color: #000;
+
+a:active {
+  color: #fff;
+  background-color: #000;
 }
+
 ul {
-    margin-top: 0;
-    padding-left: 0.5em;
-    list-style: none outside;
+  margin-top: 0;
+  padding-left: 0.3rem;
+  list-style: none outside;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
-@media screen and (max-width: 700px) {
-body {
+
+@media screen and (max-device-width: 1000px) {
+  body {
+    font-size: 2em;
     margin: 12px;
-}
-.contentBox {
-    max-width: 1080px;
+  }
+
+  .content-box {
     padding: 12px;
     margin: 0 auto;
-}
+  }
 }
