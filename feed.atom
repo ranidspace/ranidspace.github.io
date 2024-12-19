@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Ranidspace Blog</title>
+  <subtitle>My bullshit</subtitle>
+  <link href="https://ranid.space/" />
+  <author>
+    <name>ranidspace</name>
+  </author>
+  <id>urn:uuid:bf6aa1e8-35d1-46bd-86a3-d0292d66a9d9</id>
+  <updated>2024-12-17T3:03:26Z</updated>
+
+  <entry>
+    <title>I'm Quitting Social Media lol</title>
+    <id>https://ranid.space/blog/quitting</id>
+    <updated>2024-12-16T14:48:00Z</updated>
+    <content type="html">
+      <![CDATA[
+        <p>I feel like every time I go on tumblr or bluesky or whatever shit everyone's complaining how everything
+        sucks. I don't feel like anything is worth it like I wake up and spend an hour scrolling shit and then by the
+        end of it who cares. I'm tired.</p>
+
+        <p>I'm hoping to spend more time working on this website and I encourage everyone to make their own websites
+        and bookmark a bunch of other personal sites as well. I'm hoping to get into making an RSS feed so if u wanna
+        you can just see these posts, but I don't really plan on doing too much with this.</p>
+
+        <p>Anyway thats all bye</p>
+        ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Programs and Services I Use</title>
+    <id>tag:ranid.space,2023-07-15:/blog/programs</id>
+    <updated>2024-07-15T17:03:00Z</updated>
+    <content type="html">
+      <![CDATA[
+        <p>I've decided to make a bit of a blog here in order to fill up this first page. So here's what I use when im
+        on my computer.</p>
+
+        <p>I use <a href="https://www.mozilla.org/en-CA/firefox/new/">Firefox</a>. It is one of the only browsers that
+        is not based on chromium. Google owns chromium and is cracking down on ad blockers and such, and firefox is
+        much more customizable in my experience. Moving from chrome to Firefox was pretty easy and there's not much
+        that I miss.</p>
+
+        <p>If you care about privacy (which you should), I suggest use these two extensions:
+        <a href="https://addons.mozilla.org/en-CA/firefox/addon/ublock-origin/">Ublock Origin</a>,
+        <a href="https://addons.mozilla.org/en-CA/firefox/addon/localcdn-fork-of-decentraleyes/">LocalCDN</a>.
+        </p>
+
+        <p><small>Edit as of 2024-01-02: <br /> Turns out that LocalCDN is ALSO not needed, and is covered by Ublock
+        origin. i've been wanting to put this here for a while but i only did it now.</small></p>
+
+        <p>This list was actually a lot longer. I then later found out that a bunch of extensions I used were reduntant
+        or very old. LocalCDN is just a fork of Decentraleyes, which is a lot more updated, Privacy badger and
+        DuckDuckGo Privacy essentials is redundant with blocking trackers with Ublock origin. HTTPS everywhere is just
+        built into Firefox these days, it's this thing:</p>
+
+        <img src="images/HTTPSonlymode.png"
+        alt="A screenshot with text, a title saying 'HTTPS-Only Mode' and a paragraph of text which reads'HTTPS provides a secure, encrypted connection between Firefox and the websites you visit. Most websites support HTTPS, and if HTTPS-Only Mode is enabled, then Firefox will upgrade all connections to HTTPS.'"
+        height="239" width="686" />
+
+        <p>Firefox in general can be
+        <a href="https://brainfucksec.github.io/firefox-hardening-guide">hardened for privacy</a> but there's a lot of
+        stuff that can break functionality and slow things down. Don't do everything on that page blindly, learn what
+        they do first.
+        </p>
+
+        <p>Moving on from Firefox, rapid firing some open source programs I use which was originally the fucking point
+        of this blog post:
+
+          <a href="https://www.7-zip.org/">7Zip</a> (please stop using winrar),
+        <a href="https://www.audacityteam.org/download/">Audacity</a>
+        (Use version 3.0.2! It's the latest version without telemetry),
+        <a href="https://f-droid.org/en/packages/com.looker.droidify/">Droid-ify</a>,
+        <a href="https://apt.izzysoft.de/fdroid/index/apk/me.jmh.authenticatorpro">Authenticator Pro</a>
+        (the repository should be included in Droid-ify),
+        <a href="https://syncthing.net/">Syncthing</a>, and a lot more stuff but thats the stuff i use daily
+        </p>
+
+        <p>I would also like to take a moment to recommend <a href="https://bitwarden.com/">Bitwarden</a>. Stop using
+        the same password on every site. This is basic security</p>
+
+        <p>Anyway, most people I know already know this stuff, I really just made this in order to get something
+        interesting on this page. Happy surfing.</p>
+      ]]>
+    </content>
+  </entry>
+</feed>
