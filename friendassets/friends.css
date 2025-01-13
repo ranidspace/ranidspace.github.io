@@ -1,19 +1,25 @@
+.friend {
+  display: block;
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 16pt auto;
+  padding: 20px;
+  text-align: center;
+}
+
 @font-face {
   font-family: 'pixter-granularregular';
-  src: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff2') format('woff2');
-  src: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff') format('woff');
+  src: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff2')
+    format('woff2');
+  src: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff')
+    format('woff');
 }
 
 .lise {
-  display: block;
-  max-width: 800px;
-  background-color: #B886F5;
-  margin: auto;
-  padding: 20px;
+  background-color: #b886f5;
   font-family: 'pixter-granularregular';
-  border-radius: 20px;
-  cursor: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur'), auto;
-  text-align: center;
+  cursor: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur'),
+    auto;
 }
 
 .lise h1 {
@@ -35,7 +41,7 @@
 .lise a:link {
   color: rgb(91, 206, 250);
   text-decoration: none;
-  font-family: 'pixter-granularregular'
+  font-family: 'pixter-granularregular';
 }
 
 .lise a:visited {
@@ -46,7 +52,8 @@
 .lise a:hover {
   color: rgba(0, 0, 0, 0);
   text-decoration: underline;
-  cursor: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur'), auto;
+  cursor: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur'),
+    auto;
 }
 
 @font-face {
@@ -55,12 +62,13 @@
 }
 
 .doomhardy {
-  display: block;
-  max-width: 800px;
-  margin: 16pt auto;
-  background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(65, 29, 12, 1) 0%, rgba(107, 41, 10, 1) 100%);
-  padding: 20px;
-  border-radius: 20px;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(65, 29, 12, 1) 0%,
+    rgba(107, 41, 10, 1) 100%
+  );
+  border-radius: 0.375rem;
   border: 3px solid black;
   color: #fdd3ad;
 }
@@ -68,7 +76,6 @@
 .doomhardy h1 {
   font-size: 2em;
   font-family: 'Da Bomb';
-  text-align: center;
 }
 
 .doomhardy p {
@@ -85,4 +92,33 @@
 
 .doomhardy a:visited {
   color: #d3adfd;
+}
+
+.gira {
+  color: #ccfffe;
+  background-color: #416600;
+  font-family: sans-serif;
+  cursor: url('https://giraffeyla10.neocities.org/img/SBURB_SELECT.png'),
+    default;
+  border: 4pt solid;
+  border-color: #5d8811 #223500 #223500 #5d8811;
+}
+
+.gira h1 {
+  font-family: 'fontstuck', 'Courier New', Courier, monospace;
+  font-size: 30pt;
+}
+
+.gira p {
+  margin: 4pt 0;
+}
+
+@font-face {
+  font-family: 'fontstuck';
+  src: url('fontstuck-extended.otf') format('opentype');
+}
+.gira a {
+  color: #4f0099;
+  font-weight: bold;
+  text-decoration: none;
 }
