@@ -1,154 +1,163 @@
 [data-theme="light"] {
-	--color-bg: white;
-	--color-fg: black;
-	--color-box: rgb(207, 207, 207);
-	--shadow: inset 0 0 3px 3px var(--color-box);
-	--link-color: rgb(51,102,204);
-	--link-visit: rgb(85, 26, 139);
-  }
-  
-  [data-theme="dark"] {
-	--color-bg: rgb(42, 42, 42);
-	--color-fg: white;
-	--color-box: rgb(88, 88, 88);
-	--shadow: none;
-	--link-color: rgb(170, 199, 255);
-	--link-visit: rgb(225, 148, 255);
-  }
+  --color-bg: white;
+  --color-fg: black;
+  --color-box: rgb(207, 207, 207);
+  --shadow: inset 0 0 3px 3px var(--color-box);
+  --link-color: rgb(51, 102, 204);
+  --link-visit: rgb(85, 26, 139);
+}
 
-  /* Custom font, https://github.com/North-West-Wind/splatoon3-fonts/tree/main/Decrypted */
+[data-theme="dark"] {
+  --color-bg: rgb(42, 42, 42);
+  --color-fg: white;
+  --color-box: rgb(88, 88, 88);
+  --shadow: none;
+  --link-color: rgb(170, 199, 255);
+  --link-visit: rgb(225, 148, 255);
+}
+
+/* Custom font, https://github.com/North-West-Wind/splatoon3-fonts/tree/main/Decrypted */
 @font-face {
-    font-family: BlitzMain;
-    src: url("fonts/BlitzMain.otf") format("opentype");
+  font-family: BlitzMain;
+  src: url("fonts/BlitzMain.otf") format("opentype");
 }
 
 /* general tags */
 body {
-	background: var(--color-bg);
-	color: var(--color-fg);
-	font-family: Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: Arial, sans-serif;
 }
 p {
-	font-size: 18px;
+  font-size: 18px;
 }
 h1 {
-	margin: 10px 0;
-	font-size: 40px;
-	font-family: BlitzMain;
-	font-weight: bold;
-	line-height: 40px;
+  margin: 10px 0;
+  font-size: 40px;
+  font-family: BlitzMain;
+  font-weight: bold;
+  line-height: 40px;
 }
 .version {
-	font-size: 14px;
-	font-family: BlitzMain;
-	font-weight: initial;
+  font-size: 14px;
+  font-family: BlitzMain;
+  font-weight: initial;
 }
-input, button{
-	font-size: 16px;
-	margin: 10px 0;
+input,
+button {
+  font-size: 16px;
+  margin: 10px 0;
 }
 hr {
-	color: var(--color-fg);
+  color: var(--color-fg);
 }
 img {
-	height: 128px;
-	width: 128px;
-	background-color: white;
-	border-radius: 10px 10px 0 0;
-	box-shadow: var(--shadow);
+  height: 128px;
+  width: 128px;
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  box-shadow: var(--shadow);
 }
 
-a:link {color: var(	--link-color);}
-a:visited {color: var(	--link-visit);}
-a:focus {color: var(--color-bg); background-color: var(--color-fg);}
+a:link {
+  color: var(--link-color);
+}
+a:visited {
+  color: var(--link-visit);
+}
+a:focus {
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+}
 
 /* classes for the  */
 .lbl-toggle {
-	list-style: none;
-	cursor: pointer;
-	font-size: 26px;
-	line-height: 26px;
-	font-weight: bold;
-	font-family: BlitzMain;
-	margin: 14px 0;
-	user-select: none;
+  list-style: none;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: bold;
+  font-family: BlitzMain;
+  margin: 14px 0;
+  user-select: none;
 }
 .gear-container {
-	display: grid; 
-	justify-content: center;
-	grid-template-columns: repeat(auto-fill, 128px);
-	gap: 5px;
-	width: 90%;
-	min-width: 540px;
-	margin: auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 128px);
+  gap: 5px;
+  width: 90%;
+  min-width: 540px;
+  margin: auto;
 }
 .item {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	align-items: center;
-	width: 128px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 128px;
 }
 .gearname {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	height: 65px;
-	width: 120px;
-	padding: 0 4px;
-	margin: 0;
-	background-color: var(--color-box);
-	border-radius: 0 0 10px 10px;
-	font-size: 18px;
-	line-height: 20px;
-	font-family: BlitzMain;
-	letter-spacing: 0.1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 65px;
+  width: 120px;
+  padding: 0 4px;
+  margin: 0;
+  background-color: var(--color-box);
+  border-radius: 0 0 10px 10px;
+  font-size: 18px;
+  line-height: 20px;
+  font-family: BlitzMain;
+  letter-spacing: 0.1px;
 }
 /* For mobile */
 @media screen and (max-width: 570px) {
-	h1 {
-		line-height: 25px;
-		font-size: 25px;
-	}
-	img {
-		width: 96px;
-		height: 96px;
-	}
-	.gear-container {
-		grid-template-columns: repeat(auto-fill, 96px);	
-		width: 100%;
-		min-width: 0;
-	}
-	.item {
-		width: 96px;
-	}
-	.gearname {
-		font-size: 14px;
-		line-height: 14px;
-		height: 46px;
-		width: 90px;
-		padding: 0 3px;
-	}
+  h1 {
+    line-height: 25px;
+    font-size: 25px;
+  }
+  img {
+    width: 96px;
+    height: 96px;
+  }
+  .gear-container {
+    grid-template-columns: repeat(auto-fill, 96px);
+    width: 100%;
+    min-width: 0;
+  }
+  .item {
+    width: 96px;
+  }
+  .gearname {
+    font-size: 14px;
+    line-height: 14px;
+    height: 46px;
+    width: 90px;
+    padding: 0 3px;
+  }
 }
 
 /* Amiibo checkbox */
 .gearfilter {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 
 #amiibo:checked ~ div .amiiboitem,
 #uroko:checked ~ div .urokoitem {
-	display: none;
+  display: none;
 }
 
 .lbl-toggle::after {
-	content: '>';
-	display: inline-block;
-	margin-left: 10px;
+  content: ">";
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .toggle[open] > .lbl-toggle::after {
-	transform: rotate(90deg) translate(3px,-5px);
+  transform: rotate(90deg) translate(3px, -5px);
 }
+
