@@ -1,36 +1,13 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>
-    .mainText {
-      display: block;
-      width: 800px;
-      margin: 60px auto 50px;
-      text-align: center;
-    }
-  </style>
-</head>
+{% include header.html %}
 
 <body>
   <div class="content-box">
-    <h1>
-      Ranid's Space
-    </h1>
-    <div class="navigation">
-      <a href="index.html">Main</a> |
-      <a href="projects.html">Projects</a> |
-      <a href="art.html">Art</a> |
-      <a href="friends.html">Friends</a>
-    </div>
+  {% include nav.html %}
 
-    <hr>
-    {{ content }}
-
+  {{ content }}
+  </div>
 </body>
 
 </html>

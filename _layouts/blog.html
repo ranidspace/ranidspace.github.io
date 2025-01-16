@@ -1,1 +1,14 @@
-{{ content }}
+<!doctype html>
+<html lang="en">
+{% include header.html %}
+
+<body>
+  <div class="content-box">
+    {% include nav.html %}
+    <h4> {{ page.title }} </h4>
+    <h5>{{ page.date | date: "%Y-%m-%d %l:%M%p" }}</h5>
+    {{ content }}
+  </div>
+</body>
+
+</html>

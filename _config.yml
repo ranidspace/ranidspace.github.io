@@ -3,11 +3,18 @@ title: The Ranid Space
 description: Personal website/blog for me, ranidspace. hi.
 domain: ranid.space
 url: https://ranid.space
+author: ranidspace
 github_username: ranidspace
 
 plugins:
   - jekyll-feed
 
+defaults:
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      permalink: blog/:title
 collections:
   projects:
     output: false
@@ -16,3 +23,6 @@ collections:
     output: false
     sort_by: order
 
+feed:
+  path: /feed.atom
+  posts_limit: 20
