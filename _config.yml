@@ -1,0 +1,18 @@
+
+title: The Ranid Space
+description: Personal website/blog for me, ranidspace. hi.
+domain: ranid.space
+url: https://ranid.space
+github_username: ranidspace
+
+plugins:
+  - jekyll-feed
+
+collections:
+  projects:
+    output: false
+    sort_by: order
+  friends:
+    output: false
+    sort_by: order
+
