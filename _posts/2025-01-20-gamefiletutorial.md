@@ -19,13 +19,14 @@ This is the scary bit but I believe in you.
 #### Method 1: nxdumptool
 
 If you have a switch running
-[Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) this is quite easy,
-grab the latest commit build of `nxdt_rw_poc.nro` from [the Github releases
-page](https://github.com/DarkMatterCore/nxdumptool/releases) and put that in the
-`switch/` directory of your SD card
+[Atmosphère](https://github.com/Atmosphere-NX/Atmosphere) (Homebrew)
+this is quite easy, grab the latest commit build of `nxdt_rw_poc.nro` from [the
+Github releases page](https://github.com/DarkMatterCore/nxdumptool/releases) and
+put that in the `switch/` directory of your SD card
 
 I wrote a whole guide and everything but instead I'm just going to link to [this
-one by Dardel](https://dardel.codeberg.page/nxdumpguide/)
+one by Dardel](https://dardel.codebDumping RomFS For
+Moddingerg.page/nxdumpguide/), follow the steps in "Dumping RomFS For Modding"
 
 One thing to note, is that in the games I've tried, dumping the Update for the
 game also dumped everything from the base game as well, so you may just be able
