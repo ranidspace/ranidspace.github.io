@@ -25,17 +25,11 @@ body {
 h1 {
   font-size: 1.8em;
   text-align: center;
-  font-family: 'Martian Mono', monospace;
-  margin: 0;
 }
 
-h3 {
-  text-align: center;
-  margin: 0;
-  font-family: 'Martian Mono', monospace;
-}
-
+h1,
 h2,
+h3,
 h4,
 h5 {
   text-decoration: none;
@@ -53,10 +47,17 @@ h5 {
 
 .navigation {
   text-align: center;
-  font-size: 0.9em;
+  font-size: 20px;
   margin: 0;
 }
 
+.bloghead {
+  font-size: 18pt;
+  text-align: center;
+  margin: 0;
+  font-family: 'Martian Mono', monospace;
+  font-weight: bold;
+}
 .blogpost {
   margin-top: 1em;
   border-top: 2px solid var(--color-hr);
@@ -69,6 +70,7 @@ h5 {
 
 a {
   font-family: 'Martian Mono', monospace;
+  font-size: 0.857em;
 }
 
 a:link {
@@ -93,6 +95,12 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+code {
+  background-color: #d7cfbc;
+  padding: 2pt;
+  border-radius: 2pt;
 }
 
 @media screen and (max-device-width: 1000px) {

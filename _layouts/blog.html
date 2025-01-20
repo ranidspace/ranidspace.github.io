@@ -7,6 +7,10 @@
     {% include nav.html %}
     <h4> {{ page.title }} </h4>
     <h5>{{ page.date | date: "%Y-%m-%d %l:%M%p" }}</h5>
+    {% if page.last_modified_at %}
+      <h5>Updated {{ page.last_modified_at | date: "%Y-%m-%d" }}</h5>
+    {% endif %}
+
     {{ content }}
   </div>
 </body>

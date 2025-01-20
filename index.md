@@ -58,17 +58,25 @@ layout: default
         <a href="https://www.youtube.com/@ranidspace">ranidspace</a></li>
       <li>Discord server:
         <a href="https://discord.com/invite/T2t9DVFhUc">T2t9DVFhUc</a></li>
+      <li>Blog feed (RSS):
+        <a href="/feed.atom">feed.atom</a></li>
     </ul>
   </div>
 
 </div>
 
-<h3> Blog </h3>
+<div class="bloghead"> Blog </div>
 
 {% for post in site.posts %}
   <div class="blogpost">
     <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
     <h5>{{ post.date | date: "%Y-%m-%d %l:%M%p" }}</h5>
-    {{ post.content }}
+    {% if post.last_modified_at %}
+    <h5>Updated {{ post.last_modified_at | date: "%Y-%m-%d" }}</h5>
+    {% endif %}
+    {{ post.excerpt }}
+    {% if post.content.size > post.excerpt.size %}
+    <a href="{{ post.url}}">[View full post]</a>
+    {% endif %}
   </div>
 {% endfor %}

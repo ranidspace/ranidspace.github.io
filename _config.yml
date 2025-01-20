@@ -5,6 +5,8 @@ domain: ranid.space
 url: https://ranid.space
 author: ranidspace
 github_username: ranidspace
+excerpt_separator: <!--more-->
+
 
 plugins:
   - jekyll-feed
