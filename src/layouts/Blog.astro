@@ -1,0 +1,21 @@
+---
+import Header from "@components/Header.astro"
+import Nav from "@components/Nav.astro"
+const {title, date, last_modified_at} = Astro.props
+---
+<!doctype html>
+<html lang="en">
+<Header />
+
+<body>
+  <div class="content-box">
+    <Nav />
+    <h4> {title} </h4>
+    <h5>{date | date: "%Y-%m-%d %l:%M%p" }</h5>
+    {last_modified_at && <h5>{last_modified_at}</h5>}
+
+    <slot />
+  </div>
+</body>
+
+</html>
