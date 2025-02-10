@@ -1,0 +1,59 @@
+---
+const pageTitle="Ranid Projects"
+import Default from '@layouts/Default.astro'
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('projects')).sort(
+  (a, b) => b.data.order - a.data.order
+);
+
+---
+
+<style is:global>
+  .projects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .projectText {
+    padding: 30px;
+  }
+
+  img {
+    width: 20rem;
+    margin: 2rem;
+  }
+
+  @media screen and (max-device-width: 1000px) {
+    .project {
+      align-items: flex-start;
+    }
+
+    img {
+      width: 10rem;
+    }
+  }
+</style>
+
+<Default pageTitle={pageTitle}>
+{
+projects.map((project, index) => {
+  const reverse = index % 2 !== 0 ? "flex-direction: row-reverse;" : "" ;
+  return (
+  <div class="project" style={reverse}>
+    <div class="projectText">
+      <a href={project.data.link}>
+        <h2>{project.data.title}</h2>
+      </a>
+      <p>{project.body}</p>
+    </div>
+    <img src=`images/${project.data.image}` alt=`${project.data.alt}` />
+  </div>
+  )}
+  )}
+</Default>

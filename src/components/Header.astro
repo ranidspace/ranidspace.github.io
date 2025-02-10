@@ -1,15 +1,26 @@
 ---
-import { SEO } from "astro-seo"
-const { title } = Astro.props
----
+import { siteConfig } from 'src/config'
 
-<head>
-  <meta charset="UTF-8">
-  <title>{title}</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="alternate" type="application/atom+xml" href="/feed.atom">
-  <SEO
-    title="{title}"
-  />
-</head>
+const { pageTitle, description } = Astro.props
+const desc = description ?? siteConfig.description
+const canonUrl = new URL(Astro.url.pathname, Astro.site)
+
+interface Props {
+  pageTitle: string;
+  description: string;
+}
+
+---
+<meta charset="UTF-8">
+<title>{pageTitle}</title>
+<meta name="description" content={desc}>
+<meta name="author" content={siteConfig.author.name}>
+<meta name="canonical" content={canonUrl}>
+<meta name="og:title" content={pageTitle}>
+<meta name="og:description" content={desc}>
+<meta name="og:url" content={canonUrl}>
+<meta name="og:site_name" content={siteConfig.title}>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="alternate" type="application/atom+xml" href="/feed.atom">
+

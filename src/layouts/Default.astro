@@ -1,16 +1,24 @@
 ---
-import Nav from "@components/Nav.astro"
 import Header from "@components/Header.astro"
+import Nav from "@components/Nav.astro"
+import "/style.css"
+
+const { pageTitle, description } = Astro.props
+
 ---
 <!doctype html>
 <html lang="en">
-<Header />
+<head>
+  <Header pageTitle={pageTitle} description={description}/>
+  <meta name="og:type" content=website>
+</head>
 
 <body>
   <div class="content-box">
   <Nav/>
 
   <slot />
+
   </div>
 </body>
 

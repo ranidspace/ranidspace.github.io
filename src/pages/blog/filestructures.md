@@ -1,7 +1,7 @@
 ---
 title: "An incoherent rant about where programs store their files"
 date: 2025-02-07 10:36
-layout: blog
+layout: '@layouts/Blog.astro'
 ---
 
 \[I'm not proof-reading this I have strong emotions and a need to post]

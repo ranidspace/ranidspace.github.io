@@ -1,21 +1,36 @@
 ---
 import Header from "@components/Header.astro"
 import Nav from "@components/Nav.astro"
-const {title, date, last_modified_at} = Astro.props
+import "/style.css"
+
+const { frontmatter, rawContent } = Astro.props
+const postdate = new Date(Date.parse(frontmatter.date)).toLocaleString(
+  'en-CA', {dateStyle: "short", timeStyle: "short"}
+)
+const desc = rawContent()
+              .trim()
+              .split('\n\n')[0]
+              .replaceAll('\n', " ")
+
 ---
 <!doctype html>
 <html lang="en">
-<Header />
+<head>
+  <Header pageTitle={frontmatter.title} description={desc}/>
+  <meta name="og:type" content=article>
+</head>
 
 <body>
   <div class="content-box">
-    <Nav />
-    <h4> {title} </h4>
-    <h5>{date | date: "%Y-%m-%d %l:%M%p" }</h5>
-    {last_modified_at && <h5>{last_modified_at}</h5>}
+  <Nav/>
+  <h4> {frontmatter.title} </h4>
+  <h5>{postdate}</h5>
+  {frontmatter.updated && <h5>Updated {frontmatter.updated}</h5>}
 
-    <slot />
+  <slot />
+
   </div>
 </body>
 
 </html>
+

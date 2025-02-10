@@ -1,6 +1,6 @@
 ---
 title: 'Programs and Services I Use'
-layout: blog
+layout: '@layouts/Blog.astro'
 date: 2023-07-15 17:03
 updated: "2024-01-02"
 ---

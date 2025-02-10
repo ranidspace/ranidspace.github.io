@@ -1,4 +1,6 @@
 ---
+const pageTitle = "Ranid Friends"
+const desc = "My friends :D"
 import Default from '@layouts/Default.astro'
 import 'friendassets/friends.css'
 
@@ -7,7 +9,7 @@ const friends = (await getCollection('friends')).sort(
   (a,b) => a.data.order - b.data.order
 );
 ---
-<Default>
+<Default pageTitle="" description="friends :D">
   {friends.map(async (friend) => {
     const { Content } = await render(friend)
     return (
