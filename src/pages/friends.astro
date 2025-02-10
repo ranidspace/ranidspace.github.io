@@ -9,7 +9,7 @@ const friends = (await getCollection('friends')).sort(
   (a,b) => a.data.order - b.data.order
 );
 ---
-<Default pageTitle="" description="friends :D">
+<Default pageTitle={pageTitle} description={desc}>
   {friends.map(async (friend) => {
     const { Content } = await render(friend)
     return (

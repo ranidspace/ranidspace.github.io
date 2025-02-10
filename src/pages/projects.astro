@@ -1,5 +1,6 @@
 ---
 const pageTitle="Ranid Projects"
+const desc="My beloved projects"
 import Default from '@layouts/Default.astro'
 import { getCollection } from 'astro:content';
 const projects = (await getCollection('projects')).sort(
@@ -40,7 +41,7 @@ const projects = (await getCollection('projects')).sort(
   }
 </style>
 
-<Default pageTitle={pageTitle}>
+<Default pageTitle={pageTitle} description={desc}>
 {
 projects.map((project, index) => {
   const reverse = index % 2 !== 0 ? "flex-direction: row-reverse;" : "" ;
