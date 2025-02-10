@@ -1,7 +1,9 @@
 ---
 import Default from '@layouts/Default.astro'
 import { getCollection, render } from 'astro:content';
-const posts = await getCollection('blog');
+const posts = (await getCollection('blog')).sort(
+  (a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
+);
 ---
 <style>
   .info-flex {
@@ -69,7 +71,7 @@ const posts = await getCollection('blog');
 
   <div class="bloghead"> Blog </div>
   {
-    posts.reverse().map(async (post) => {
+    posts.map(async (post) => {
       const { Content } = await render(post)
       return (
         <div class="blogpost">

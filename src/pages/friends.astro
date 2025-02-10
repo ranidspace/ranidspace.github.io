@@ -1,0 +1,21 @@
+---
+import Default from '@layouts/Default.astro'
+import 'friendassets/friends.css'
+
+import { getCollection, render } from 'astro:content';
+const friends = (await getCollection('friends')).sort(
+  (a,b) => a.data.order - b.data.order
+);
+---
+<Default>
+  {friends.map(async (friend) => {
+    const { Content } = await render(friend)
+    return (
+      <div class=`${friend.id} friend`>
+        <h1>{friend.data.name}</h1>
+        <Content />
+        <p><a href=`${friend.data.link}`>visit here</a></p>
+      </div>
+    )}
+  )}
+</Default>
