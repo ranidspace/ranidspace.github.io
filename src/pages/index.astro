@@ -71,14 +71,10 @@ const posts = await getCollection('blog');
   {
     posts.reverse().map(async (post) => {
       const { Content } = await render(post)
-      const options = {
-      dateStyle: "short",
-      timeStyle: "short",
-      }
       return (
         <div class="blogpost">
           <h4><a href="{post.url}">{post.data.title}</a></h4>
-          <h5>{post.data.date.toLocaleString('en-CA', options)}</h5>
+          <h5>{post.data.date.toLocaleString('en-CA', {timeFormat: "short"})}</h5>
           {post.data.updated && <h5>Updated {post.data.updated}</h5>}
           <Content />
         </div>
