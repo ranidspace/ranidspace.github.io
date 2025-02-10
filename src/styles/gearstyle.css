@@ -19,7 +19,7 @@
   /* Custom font, https://github.com/North-West-Wind/splatoon3-fonts/tree/main/Decrypted */
 @font-face {
     font-family: BlitzMain;
-    src: url("fonts/BlitzMain.otf") format("opentype");
+    src: url("/fonts/BlitzMain.otf") format("opentype");
 }
 
 /* general tags */

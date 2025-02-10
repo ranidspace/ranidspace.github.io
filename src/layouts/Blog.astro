@@ -1,7 +1,7 @@
 ---
 import Header from "@components/Header.astro"
 import Nav from "@components/Nav.astro"
-import "/style.css"
+import "../styles/style.css"
 
 const { frontmatter, rawContent } = Astro.props
 const postdate = new Date(Date.parse(frontmatter.date)).toLocaleString(

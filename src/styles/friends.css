@@ -58,7 +58,7 @@
 
 @font-face {
   font-family: 'Da Bomb';
-  src: url('DABOMB__.TTF') format('truetype');
+  src: url('/fonts/DABOMB__.TTF') format('truetype');
 }
 
 .doomhardy {
@@ -115,7 +115,7 @@
 
 @font-face {
   font-family: 'fontstuck';
-  src: url('fontstuck-extended.otf') format('opentype');
+  src: url('/fonts/fontstuck-extended.otf') format('opentype');
 }
 .gira a {
   color: #4f0099;

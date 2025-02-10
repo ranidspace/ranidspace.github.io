@@ -2,7 +2,7 @@
 const pageTitle = "Ranid Friends"
 const desc = "My friends :D"
 import Default from '@layouts/Default.astro'
-import 'friendassets/friends.css'
+import '../styles/friends.css'
 
 import { getCollection, render } from 'astro:content';
 const friends = (await getCollection('friends')).sort(
