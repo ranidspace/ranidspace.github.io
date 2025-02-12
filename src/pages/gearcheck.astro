@@ -1,51 +1,78 @@
 ---
-import '../styles/gearstyle.css'
+import "../styles/gearstyle.css";
 ---
+
 <!doctype html>
 <html lang="en" data-theme="light">
-
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Splatoon 3 Gear Completion Checker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<script is:inline src="/gearcheckdata/gearchecker.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script is:inline src="/gearcheckdata/gearchecker.js"></script>
 </head>
 
-<body onload=loadpage()>
-  <h1>Splatoon 3 Gear Completion Checker <a
-      href="https://github.com/ranidspace/ranidspace.github.io/blob/main/GearCheckData/changelog.md"
-      class="version">V1.2.5</a><span class="version"> (link to changelog)</span></h1>
-  <button onclick=changetheme() type="button" data-theme-toggle aria-label="Change theme">
-    Change Theme</button>
+<body onload="loadpage()">
+  <h1>
+    Splatoon 3 Gear Completion Checker
+    <a href="https://github.com/ranidspace/ranidspace.github.io/blob/main/GearCheckData/changelog.md"
+      class="version">V1.2.5</a>
+    <span class="version"> (link to changelog)</span>
+  </h1>
 
-  <p>This is a tool by <a href="https://ranid.gay">Ranidspace</a> designed to display all Splatoon gear you own sorted
-    by how many stars they have</p>
+  <button onclick="changetheme()"
+    type="button"
+    data-theme-toggle
+    aria-label="Change theme"
+  >
+    Change Theme
+  </button>
+
   <p>
-    The geardata file can be obtained from the "/s3gear" command from the <a
-      href="https://discord.com/api/oauth2/authorize?client_id=340354052715970563&permissions=11543039040&scope=applications.commands%20bot">Spyke
-      Discord bot</a>
-    (that link is to add the bot to your server), or from <a href="https://github.com/frozenpandaman/s3s">s3s</a>, by
-    using the "--getseed" argument. These files are usually for <a
-      href="https://leanny.github.io/splat3seedchecker/">Lean's Gear Seed Checker</a>
+    This is a tool by <a href="https://ranid.space/">Ranidspace</a> designed to
+    display all Splatoon gear you own sorted by how many stars they have
   </p>
 
-  <p>Custom fonts extracted from Splatoon 3 by <a
-      href="https://github.com/North-West-Wind/splatoon3-fonts">North-West-Wind</a>
+  <p>
+    The geardata file can be obtained from the "/s3gear" command from the
+    <a href="https://discord.com/api/oauth2/authorize?client_id=340354052715970563&permissions=11543039040&scope=applications.commands%20bot">
+      Spyke Discord bot</a>
+    (that link is to add the bot to your server), or from
+    <a href="https://github.com/frozenpandaman/s3s">s3s</a>, by using the
+    "--getseed" argument. These files are usually for
+    <a href="https://leanny.github.io/splat3seedchecker/">
+      Lean's Gear Seed Checker</a>
+  </p>
+
+  <p>
+    Custom fonts extracted from Splatoon 3 by
+    <a href="https://github.com/North-West-Wind/splatoon3-fonts">
+      North-West-Wind
+    </a>
     <br />
-    Images and much of the data used in the backend by <a href="https://github.com/Leanny/splat3">LeanYoshi</a>
+    Images and much of the data used in the backend by
+    <a href="https://github.com/Leanny/splat3">LeanYoshi</a>
   </p>
 
-  <p>Everything is processed locally on your computer and nothing is uploaded, <a
-      href="https://github.com/ranidspace/ranidspace.github.io">read the source code for this whole website here</a></p>
+  <p>
+    Everything is processed locally on your computer and nothing is uploaded,
+    <a href="https://github.com/ranidspace/ranidspace.github.io">
+      read the source code for this whole website here
+    </a>
+  </p>
 
   <p>Upload the geardata file and press submit:</p>
 
-  <input type="file" id="geardata" name="file" accept=".json" class="inputbutton" /><br />
+  <input
+    type="file" id="geardata" name="file" accept=".json" class="inputbutton" />
+  <br />
   <input type="checkbox" class="gearfilter" id="amiibo">
-  <label for="amiibo">Exclude Missing Amiibo Gear</label><br />
+  <label for="amiibo">Exclude Missing Amiibo Gear</label>
+  <br />
   <input type="checkbox" class="gearfilter" id="uroko">
-  <label for="uroko">Exclude Missing Grizzco Shop Gear</label><br />
-  <button onclick=submit()>Start</button>
+  <label for="uroko">Exclude Missing Grizzco Shop Gear</label>
+  <br />
+  <button onclick="submit()">Start</button>
+
   <div id='output'></div>
 </body>
 

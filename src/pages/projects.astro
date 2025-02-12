@@ -1,12 +1,11 @@
 ---
-const pageTitle="Ranid Projects"
-const desc="My beloved projects"
-import Default from '@layouts/Default.astro'
-import { getCollection } from 'astro:content';
-const projects = (await getCollection('projects')).sort(
+const pageTitle = "Ranid Projects";
+const desc = "My beloved projects";
+import Default from "@layouts/Default.astro";
+import { getCollection } from "astro:content";
+const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.order - a.data.order
 );
-
 ---
 
 <style is:global>
@@ -42,19 +41,20 @@ const projects = (await getCollection('projects')).sort(
 </style>
 
 <Default pageTitle={pageTitle} description={desc}>
-{
-projects.map((project, index) => {
-  const reverse = index % 2 !== 0 ? "flex-direction: row-reverse;" : "" ;
-  return (
-  <div class="project" style={reverse}>
-    <div class="projectText">
-      <a href={project.data.link}>
-        <h2>{project.data.title}</h2>
-      </a>
-      <p>{project.body}</p>
-    </div>
-    <img src=`/images/${project.data.image}` alt=`${project.data.alt}` />
-  </div>
-  )}
-  )}
+  {
+    projects.map((project, index) => {
+      const reverse = index % 2 !== 0 ? "flex-direction: row-reverse;" : "";
+      return (
+        <div class="project" style={reverse}>
+          <div class="projectText">
+            <a href={project.data.link}>
+              <h2>{project.data.title}</h2>
+            </a>
+            <p>{project.body}</p>
+          </div>
+          <img src={"/images/" + project.data.image} alt={project.data.alt} />
+        </div>
+      );
+    })
+  }
 </Default>

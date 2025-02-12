@@ -1,13 +1,14 @@
 ---
-const title = "Ranid Website"
-import Default from '@layouts/Default.astro'
-import { getCollection, render } from 'astro:content';
-const posts = (await getCollection('blog')).sort(
+const title = "Ranid Website";
+import Default from "@layouts/Default.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort(
   (a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
 );
 import markdownit from "markdown-it";
-const md = markdownit('commonmark')
+const md = markdownit("commonmark");
 ---
+
 <style>
   .info-flex {
     display: flex;
@@ -54,42 +55,57 @@ const md = markdownit('commonmark')
 <Default pageTitle={title}>
   <div class="info-flex">
     <div class="info-text">
-      Hi, this is Audrey, but you may know me as Ranid or Ranidspace. I go by They/It/Xe pronouns. I am not a web
-      designer (which may be apparent). Feel free to look around. This website is severely unfinished!
+      Hi, this is Audrey, but you may know me as Ranid or Ranidspace. I go by
+      They/It/Xe pronouns. I am not a web designer (which may be apparent).
+      Feel free to look around. This website is severely unfinished!
     </div>
 
     <div class="media-list">
       Find me here:
       <ul>
-        <li>Github:
-          <a href="https://github.com/ranidspace">ranidspace</a></li>
-        <li>Youtube:
-          <a href="https://www.youtube.com/@ranidspace">ranidspace</a></li>
-        <li>Discord server:
-          <a href="https://discord.com/invite/T2t9DVFhUc">T2t9DVFhUc</a></li>
-        <li>Blog feed (RSS):
-          <a href="/feed.atom">feed.atom</a></li>
+        <li>
+          Github:
+          <a href="https://github.com/ranidspace">ranidspace</a>
+        </li>
+        <li>
+          Youtube:
+          <a href="https://www.youtube.com/@ranidspace">ranidspace</a>
+        </li>
+        <li>
+          Discord server:
+          <a href="https://discord.com/invite/T2t9DVFhUc">T2t9DVFhUc</a>
+        </li>
+        <li>
+          Blog feed (RSS):
+          <a href="/feed.atom">feed.atom</a>
+        </li>
       </ul>
     </div>
-
   </div>
 
-  <div class="bloghead"> Blog </div>
+  <div class="bloghead">Blog</div>
   {
     posts.map(async (post) => {
       const split = post.body.split("<!--more-->");
       const excerpt = md.render(split[0]);
+      const link = "/blog/" + post.id;
       return (
         <div class="blogpost">
-          <h4><a href=`/blog/${post.id}`>{post.data.title}</a></h4>
-          <h5>{post.data.date.toLocaleString('en-CA', {timeFormat: "short"})}</h5>
+          <h4>
+            <a href={link}>{post.data.title}</a>
+          </h4>
+          <h5>
+            {post.data.date.toLocaleString("en-CA", { timeFormat: "short" })}
+          </h5>
           {post.data.updated && <h5>Updated {post.data.updated}</h5>}
           <Fragment set:html={excerpt} />
-          {split[1] && 
-          <p><a href=`/blog/${post.id}`>[View full post]</a></p>
-          }
+          {split[1] && (
+            <p>
+              <a href={link}>[View full post]</a>
+            </p>
+          )}
         </div>
-      )
+      );
     })
   }
 </Default>

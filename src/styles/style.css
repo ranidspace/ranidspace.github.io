@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Martian Mono';
-  src: url('https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Regular.woff2');
+  font-family: "Martian Mono";
+  src: url("https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Regular.woff2");
 }
 
 @font-face {
-  font-family: 'Martian Mono';
-  src: url('https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Bold.woff2');
+  font-family: "Martian Mono";
+  src: url("https://raw.githubusercontent.com/evilmartians/mono/refs/heads/main/fonts/webfonts/MartianMono-Bold.woff2");
   font-weight: bold;
 }
 
@@ -18,7 +18,7 @@
 body {
   background-color: #224b34;
   color: var(--color-text);
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
   font-size: 1.2em;
 }
 
@@ -34,7 +34,7 @@ h4,
 h5 {
   text-decoration: none;
   margin: 0;
-  font-family: 'Martian Mono', monospace;
+  font-family: "Martian Mono", monospace;
 }
 
 .content-box {
@@ -55,7 +55,7 @@ h5 {
   font-size: 18pt;
   text-align: center;
   margin: 0;
-  font-family: 'Martian Mono', monospace;
+  font-family: "Martian Mono", monospace;
   font-weight: bold;
 }
 .blogpost {
@@ -69,7 +69,7 @@ h5 {
 }
 
 a {
-  font-family: 'Martian Mono', monospace;
+  font-family: "Martian Mono", monospace;
   font-size: 0.857em;
 }
 

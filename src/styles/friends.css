@@ -8,23 +8,24 @@
 }
 
 @font-face {
-  font-family: 'pixter-granularregular';
-  src: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff2')
-    format('woff2');
-  src: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff')
-    format('woff');
+  font-family: "pixter-granularregular";
+  src: url("https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff2")
+    format("woff2");
+  src: url("https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/font/pixter_granular-webfont.woff")
+    format("woff");
 }
 
 .lise {
   background-color: #b886f5;
-  font-family: 'pixter-granularregular';
-  cursor: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur'),
+  font-family: "pixter-granularregular";
+  cursor:
+    url("https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur"),
     auto;
 }
 
 .lise h1 {
   margin-top: 5px;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   text-align: center;
 }
 
@@ -41,7 +42,7 @@
 .lise a:link {
   color: rgb(91, 206, 250);
   text-decoration: none;
-  font-family: 'pixter-granularregular';
+  font-family: "pixter-granularregular";
 }
 
 .lise a:visited {
@@ -52,13 +53,14 @@
 .lise a:hover {
   color: rgba(0, 0, 0, 0);
   text-decoration: underline;
-  cursor: url('https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur'),
+  cursor:
+    url("https://raw.githubusercontent.com/csd-was-taken/Webbed-Site/refs/heads/main/cursors/wii-pointer-ccw.cur"),
     auto;
 }
 
 @font-face {
-  font-family: 'Da Bomb';
-  src: url('/fonts/DABOMB__.TTF') format('truetype');
+  font-family: "Da Bomb";
+  src: url("/fonts/DABOMB__.TTF") format("truetype");
 }
 
 .doomhardy {
@@ -75,18 +77,18 @@
 
 .doomhardy h1 {
   font-size: 2em;
-  font-family: 'Da Bomb';
+  font-family: "Da Bomb";
 }
 
 .doomhardy p {
   text-align: center;
   font-size: 1em;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   margin: 4pt 0;
 }
 
 .doomhardy a:link {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   color: #add7fd;
 }
 
@@ -98,14 +100,14 @@
   color: #ccfffe;
   background-color: #416600;
   font-family: sans-serif;
-  cursor: url('https://giraffeyla10.neocities.org/img/SBURB_SELECT.png'),
-    default;
+  cursor:
+    url("https://giraffeyla10.neocities.org/img/SBURB_SELECT.png"), default;
   border: 4pt solid;
   border-color: #5d8811 #223500 #223500 #5d8811;
 }
 
 .gira h1 {
-  font-family: 'fontstuck', 'Courier New', Courier, monospace;
+  font-family: "fontstuck", "Courier New", Courier, monospace;
   font-size: 30pt;
 }
 
@@ -114,8 +116,8 @@
 }
 
 @font-face {
-  font-family: 'fontstuck';
-  src: url('/fonts/fontstuck-extended.otf') format('opentype');
+  font-family: "fontstuck";
+  src: url("/fonts/fontstuck-extended.otf") format("opentype");
 }
 .gira a {
   color: #4f0099;

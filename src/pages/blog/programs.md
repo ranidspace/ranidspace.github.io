@@ -4,6 +4,7 @@ layout: '@layouts/Blog.astro'
 date: 2023-07-15 17:03
 updated: "2024-01-02"
 ---
+
 I've decided to make a bit of a blog here in order to fill up this first page.
 So here's what I use when im on my computer.
 

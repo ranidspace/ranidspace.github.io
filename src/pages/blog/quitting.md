@@ -3,6 +3,7 @@ title: "I'm Quitting Social Media lol"
 date: 2024-12-16 14:48
 layout: '@layouts/Blog.astro'
 ---
+
 I feel like every time I go on tumblr or bluesky or whatever shit everyone's
 complaining how everything sucks. I don't feel like anything is worth it like I
 wake up and spend an hour scrolling shit and then by the end of it who cares.

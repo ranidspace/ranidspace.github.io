@@ -1,23 +1,28 @@
 ---
-const pageTitle = "Ranid Friends"
-const desc = "My friends :D"
-import Default from '@layouts/Default.astro'
-import '../styles/friends.css'
+const pageTitle = "Ranid Friends";
+const desc = "My friends :D";
+import Default from "@layouts/Default.astro";
+import "../styles/friends.css";
 
-import { getCollection, render } from 'astro:content';
-const friends = (await getCollection('friends')).sort(
-  (a,b) => a.data.order - b.data.order
+import { getCollection, render } from "astro:content";
+const friends = (await getCollection("friends")).sort(
+  (a, b) => a.data.order - b.data.order
 );
 ---
+
 <Default pageTitle={pageTitle} description={desc}>
-  {friends.map(async (friend) => {
-    const { Content } = await render(friend)
-    return (
-      <div class=`${friend.id} friend`>
-        <h1>{friend.data.name}</h1>
-        <Content />
-        <p><a href=`${friend.data.link}`>visit here</a></p>
-      </div>
-    )}
-  )}
+  {
+    friends.map(async (friend) => {
+      const { Content } = await render(friend);
+      return (
+        <div class={friend.id + " friend"}>
+          <h1>{friend.data.name}</h1>
+          <Content />
+          <p>
+            <a href={friend.data.link}>visit here</a>
+          </p>
+        </div>
+      );
+    })
+  }
 </Default>

@@ -1,26 +1,25 @@
 ---
-import { siteConfig } from 'src/config'
+import { siteConfig } from "src/config";
 
-const { pageTitle, description } = Astro.props
-const desc = description ?? siteConfig.description
-const canonUrl = new URL(Astro.url.pathname, Astro.site)
+const { pageTitle, description } = Astro.props;
+const desc = description ?? siteConfig.description;
+const canonUrl = new URL(Astro.url.pathname, Astro.site);
 
 interface Props {
   pageTitle: string;
   description: string;
 }
-
 ---
-<meta charset="UTF-8">
+
+<meta charset="UTF-8" />
 <title>{pageTitle}</title>
-<meta name="description" content={desc}>
-<meta name="author" content={siteConfig.author.name}>
-<meta name="canonical" content={canonUrl}>
-<meta name="og:title" content={pageTitle}>
-<meta name="og:description" content={desc}>
-<meta name="og:url" content={canonUrl}>
-<meta name="og:site_name" content={siteConfig.title}>
+<meta name="description" content={desc} />
+<meta name="author" content={siteConfig.author.name} />
+<meta name="canonical" content={canonUrl} />
+<meta name="og:title" content={pageTitle} />
+<meta name="og:description" content={desc} />
+<meta name="og:url" content={canonUrl} />
+<meta name="og:site_name" content={siteConfig.title} />
 
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="alternate" type="application/atom+xml" href="/feed.atom">
-
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="alternate" type="application/atom+xml" href="/feed.atom" />

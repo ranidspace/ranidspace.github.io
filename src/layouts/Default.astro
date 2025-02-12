@@ -1,25 +1,23 @@
 ---
-import Header from "@components/Header.astro"
-import Nav from "@components/Nav.astro"
-import "../styles/style.css"
+import Header from "@components/Header.astro";
+import Nav from "@components/Nav.astro";
+import "../styles/style.css";
 
-const { pageTitle, description } = Astro.props
-
+const { pageTitle, description } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-<head>
-  <Header pageTitle={pageTitle} description={description}/>
-  <meta name="og:type" content=website>
-</head>
+  <head>
+    <Header pageTitle={pageTitle} description={description} />
+    <meta name="og:type" content="website" />
+  </head>
 
-<body>
-  <div class="content-box">
-  <Nav/>
+  <body>
+    <div class="content-box">
+      <Nav />
 
-  <slot />
-
-  </div>
-</body>
-
+      <slot />
+    </div>
+  </body>
 </html>
