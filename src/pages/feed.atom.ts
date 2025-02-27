@@ -55,8 +55,8 @@ export const GET: APIRoute = async ({ site }) => {
       const excerpt = sanitizeHtml(
         markdown
           .render(post.body)
-          .replace('src="/', `src="${siteConfig.url}/`)
-          .replace('href="/', `href="${siteConfig.url}/`),
+          .replaceAll('src="/', `src="${siteConfig.url}/`)
+          .replaceAll('href="/', `href="${siteConfig.url}/`),
         { allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]) }
       );
       const date = new Date(Date.parse(post.data.date));
